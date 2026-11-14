@@ -7,12 +7,13 @@ phases:
       php: 8.3
     commands:
       - echo "Installing Laravel dependencies..."
-      - cd blogs-backend
+      - cd "$CODEBUILD_SRC_DIR/blogs-backend"
       - composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
 
   pre_build:
     commands:
       - echo "Validating Laravel application..."
+      - cd "$CODEBUILD_SRC_DIR/blogs-backend"
       - php artisan --version
 
   build:
@@ -27,3 +28,7 @@ artifacts:
   base-directory: blogs-backend
   files:
     - '**/*'
+  exclude-paths:
+    - '.env'
+    - '.git/**/*'
+    - 'storage/**/*'
