@@ -7,7 +7,7 @@ phases:
       php: 8.3
     commands:
       - echo "Installing Laravel dependencies..."
-      - cd backend
+      - cd blogs-backend
       - composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
 
   pre_build:
@@ -24,6 +24,6 @@ phases:
       - echo "Preparing backend deployment artifact..."
 
 artifacts:
-  base-directory: backend
+  base-directory: blogs-backend
   files:
     - '**/*'
