@@ -107,7 +107,7 @@ class BlogController extends Controller
 
         if ($blogs->isEmpty()) {
             return response()->json([
-                'message' => 'There are no posts available. Create your first blog!',
+                'message' => 'There are no posts available. create your first blog!',
                 'blogs' => []
             ], 200);
         }
