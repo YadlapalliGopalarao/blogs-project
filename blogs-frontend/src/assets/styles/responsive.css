@@ -1,0 +1,99 @@
+
+/* =====================================
+   TABLETS
+===================================== */
+
+@media (max-width: 1024px) {
+  :root {
+    --container-width: 960px;
+  }
+
+  .page-container {
+    padding-top: var(--spacing-6);
+  }
+}
+
+/* =====================================
+   MOBILE LANDSCAPE / SMALL TABLETS
+===================================== */
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: var(--font-2xl);
+  }
+
+  .container {
+    padding: 0 var(--spacing-3);
+  }
+
+  .page-container {
+    padding: var(--spacing-6) var(--spacing-3);
+  }
+
+  .card {
+    padding: var(--spacing-4);
+  }
+
+  .flex-between {
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+  }
+
+  .btn {
+    padding: 0.65rem 1rem;
+  }
+}
+
+/* =====================================
+   MOBILE PHONES
+===================================== */
+
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .page-title {
+    font-size: var(--font-xl);
+  }
+
+  .page-container {
+    padding: var(--spacing-4) var(--spacing-3);
+  }
+
+  .card {
+    padding: var(--spacing-3);
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .mobile-column {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mobile-full {
+    width: 100%;
+  }
+
+  .text-center-mobile {
+    text-align: center;
+  }
+}
+
+/* =====================================
+   ACCESSIBILITY
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
