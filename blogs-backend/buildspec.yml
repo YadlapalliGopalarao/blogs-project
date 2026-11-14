@@ -1,0 +1,29 @@
+
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 8.3
+    commands:
+      - echo "Installing Laravel dependencies..."
+      - cd backend
+      - composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
+
+  pre_build:
+    commands:
+      - echo "Validating Laravel application..."
+      - php artisan --version
+
+  build:
+    commands:
+      - echo "Laravel backend build completed successfully"
+
+  post_build:
+    commands:
+      - echo "Preparing backend deployment artifact..."
+
+artifacts:
+  base-directory: backend
+  files:
+    - '**/*'
