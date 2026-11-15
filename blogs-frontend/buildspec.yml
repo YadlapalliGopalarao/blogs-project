@@ -1,0 +1,25 @@
+
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 22
+    commands:
+      - echo "Installing Vue dependencies..."
+      - cd "$CODEBUILD_SRC_DIR/blogs-frontend"
+      - npm install
+
+  build:
+    commands:
+      - echo "Building Vue application..."
+      - npm run build
+
+  post_build:
+    commands:
+      - echo "Vue frontend build completed."
+
+artifacts:
+  base-directory: blogs-frontend/dist
+  files:
+    - '**/*'
